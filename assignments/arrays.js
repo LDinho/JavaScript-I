@@ -87,12 +87,17 @@ console.log(`Last car is ${make} ${model}`);
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
 let carModels = [];
 
-for (let i = 0; i < inventory.length; i++) {
-  const model = inventory[i].car_model;
-  carModels.push(model);
-}
-const sorted = carModels.sort().join(', ');
+// for (let i = 0; i < inventory.length; i++) {
+//   const model = inventory[i].car_model;
+//   carModels.push(model);
+// }
 
+inventory.map((car) => {
+  const model = car.car_model;
+  carModels.push(model);
+});
+
+const sorted = carModels.sort().join(', ');
 console.log(sorted);
 
 // ==== Challenge 4 ====
